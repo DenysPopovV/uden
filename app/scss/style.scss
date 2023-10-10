@@ -1,7 +1,11 @@
-@import "fonts";
-@import "vars";
-@import "global";
-@import "reset";
+@import 'mixin';
+@import 'vars';
+@import 'reset';
+@import 'lips';
+@import 'global';
 
 
-@import "./components/header.scss";
+
+@import './components/header.scss';
+
+@import './components/footer.scss';

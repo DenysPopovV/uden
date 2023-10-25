@@ -1,0 +1,106 @@
+.advantages {
+    padding-bottom: 150px;
+
+    @include mxw($md) {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        margin-bottom: 80px;
+        @include mxw($md) {
+            margin-bottom: 50px;
+        }
+        @include mxw($xs) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        row-gap: 100px;
+
+        @include mxw($sm) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            row-gap: 60px;
+        }
+        @include mxw($xs) {
+            gap: 20px;
+            row-gap: 30px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding-top: 180px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        @include mxw($md) {
+            padding-top: 100px;
+        }
+        @include mxw($xs) {
+            padding-top: 60px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../images/advantages-icons/dollar.svg');
+
+            @include mxw($md) {
+                width: 80px;
+                height: 80px;
+            }
+            @include mxw($xs) {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &--dollar::after {
+            background-image: url('../images/advantages-icons/dollar.svg');
+        }
+
+        &--sun::after {
+            background-image: url('../images/advantages-icons/sun.svg');
+        }
+
+        &--hand::after {
+            background-image: url('../images/advantages-icons/hand.svg');
+        }
+
+        &--shield::after {
+            background-image: url('../images/advantages-icons/shield.svg');
+        }
+
+        &--aim::after {
+            background-image: url('../images/advantages-icons/aim.svg');
+        }
+
+        &--blocks::after {
+            background-image: url('../images/advantages-icons/blocks.svg');
+        }
+
+    }
+
+    &__text {
+        max-width: 350px;
+
+        p {
+            @include mxw($xs) {
+                font-size: 12px;
+            }
+        }
+
+    }
+}

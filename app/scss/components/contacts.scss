@@ -1,0 +1,106 @@
+.contacts {
+    padding-bottom: 150px;
+
+    @include mxw($md) {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+
+        @include mxw($xs) {
+            margin-bottom: 58px;
+        }
+    }
+
+    &__bg {
+        position: relative;
+        background-color: #353535;
+
+        @include mxw($sm) {
+            background-color: #EDEDED;
+        }
+    }
+
+    &__box {
+        border-radius: 130px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #EDEDED;
+        padding: 65px 135px;
+        width: 100%;
+
+        @include mxw($md) {
+            padding: 35px 35px;
+        }
+
+        @include mxw($sm) {
+            flex-direction: column-reverse;
+            padding: 0;
+        }
+
+    }
+}
+
+.contact-form {
+    max-width: 400px;
+    width: 100%;
+
+    @include mxw($lg) {
+        margin-right: 20px;
+    }
+
+    @include mxw($sm) {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        border-bottom: 1px solid #000;
+        padding-bottom: 2px;
+        margin-bottom: 16px;
+        width: 100%;
+
+        &:nth-child(4) {
+            margin-bottom: 46px;
+        }
+
+        &::placeholder {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.68);
+            font-weight: 300;
+        }
+    }
+
+    &__box {
+        display: flex;
+
+        input {
+            margin-right: 30px;
+            max-width: 95px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__btn {
+        display: block;
+        left: 47%;
+        transform: translateX(-50%);
+        padding-right: 65px;
+        color: #313131;
+        &::after {
+            bottom: 0;
+        }
+    }
+}
+

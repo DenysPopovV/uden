@@ -1,0 +1,103 @@
+.hero {
+    padding-bottom: 30px;
+
+    &__bg {
+        padding-top: 90px;
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../images/hero-bg.jpg');
+
+        @include mxw($sm) {
+            background-image: url('../images/mobile-bg.jpg');
+            padding-top: 0;
+        }
+    }
+    
+    &__flex {
+
+        @include mxw($sm) {
+            height: 100vh;
+            display: flex;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+        font-size: 150px;
+        color: $text-white;
+        text-shadow: 0px 7px 15px $text-white;
+        line-height: 177px;
+
+        @include mxw($md) {
+            font-size: 90px;
+        }
+
+        @include mxw($sm) {
+            font-size: 50px;
+            line-height: 90px;
+        }
+
+        @include mxw($xs) {
+            font-size: 30px;
+            line-height: 35px;
+            margin-bottom: 11px;
+        }
+    }
+
+    &__text {
+        z-index: 2;
+        position: relative;
+        margin-bottom: 62px;
+
+        @include mxw($md) {
+            margin-bottom: 40px;
+        }
+
+        @include mxw($sm) {
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 40px;
+            line-height: 47px;
+            color: $text-white;
+
+            span {
+                color: $accent;
+            }
+
+            @include mxw($md) {
+                font-size: 30px;
+                line-height: 37px;
+            }
+
+            @include mxw($sm) {
+                font-size: 20px;
+                line-height: 27px;
+            }
+
+            @include mxw($xs) {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+    }
+
+
+    &__button {
+        background-color: #000;
+
+        @include mxw($xs) {
+            background-color: transparent;
+        }
+    }
+
+}

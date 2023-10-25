@@ -1,0 +1,103 @@
+.reviews {
+    padding-bottom: 150px;
+
+    @include mxw($sm) {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        margin-bottom: 100px;
+
+        @include mxw($sm) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__swiper {
+        overflow: visible;
+    }
+
+    &__item {
+        max-width: 728px;
+    }
+
+    &__img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+        margin-bottom: 23px;
+        background-color: #313131;
+        border-radius: 50%;
+
+        @include mxw($xs) {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+
+    @include mxw($xs) {
+        &__info {
+            display: flex;
+            align-items: center;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__span {
+        font-size: 20px;
+        line-height: normal;
+        color: $text-color;
+        display: inline-block;
+        margin-bottom: 23px;
+
+        @include mxw($xs) {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        &--date {
+            margin: 0 20px 23px 0;
+
+            @include mxw($xs) {
+                margin: 0 0 23px 0;
+            }
+        }
+
+    }
+
+    &__text {
+        margin-bottom: 32px;
+        p{
+            color: #000;
+        }
+    }
+
+    &__arrows {
+        justify-content: flex-start;
+        margin-bottom: 0;
+
+        @include mxw($xs) {
+            justify-content: center;
+        }
+    }
+
+    &__arrow {
+        display: block;
+        width: 40px;
+        height: 40px;
+        transition: opacity .3s linear;
+        &::after {
+            width: 14px;
+            height: 14px;
+        }
+        @include mxw($xs) {
+            &:first-child {
+                margin-right: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,141 @@
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 32px 0;
+
+    &.fixed {
+        z-index: 100;
+        position: fixed;
+        opacity: 0;
+        background-color: $text-color;
+        
+    }
+
+    &.animation {
+        transition: opacity .8s linear;
+    }
+
+    &.opacity {
+        opacity: 1;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    &__list {
+        @include mxw($sm) {
+            z-index: 1000;
+            position: fixed;
+            height: 100vh;
+            background-color: rgba($color: #000000, $alpha: 0.7);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateX(-100%);
+            transition: transform .3s linear;
+            background-image: url('../images/mobile-bg.jpg');
+            background-size: cover;
+            background-position: center;
+
+            &.active {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__item {
+        @include mxw($sm) {
+            margin-right: 0;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__mobile {
+        z-index: 12;
+        cursor: pointer;
+        display: none;
+        width: 30px;
+        height: 24px;
+        position: relative;
+
+        @include mxw($sm) {
+            display: block;
+            z-index: 1001;
+        }
+
+        &::after {
+            top: 0;
+            content: '';
+        }
+
+        &::before {
+            content: '';
+            bottom: 0;
+        }
+
+        span {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after,
+        &::before,
+        span {
+            left: 0;
+            position: absolute;
+            background-color: $white;
+            width: 100%;
+            height: 1px;
+            transition: transform .3s linear;
+        }
+
+        &.active {
+
+            span {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                display: none;
+            }
+
+            &::before {
+                top: 9px;
+                transform: rotate(-45deg);
+            }
+        }
+
+    }
+}
+
+.header-languages {
+    z-index: 1001;
+    display: flex;
+
+    &__item {
+        margin-right: 18px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    &__button {
+        font-size: 20px;
+        color: $text-white;
+
+        &.active {
+            border-bottom: 1px solid $white;
+        }
+    }
+}

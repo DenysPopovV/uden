@@ -55,5 +55,6 @@ textarea,
 select {
     outline: transparent;
     font: inherit;
-    border: inset;
+    border: inset transparent;
+    background-color: transparent;
 }

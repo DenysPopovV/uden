@@ -1,0 +1,473 @@
+.sets {
+    padding-bottom: 150px;
+
+    @include mxw($xs) {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        line-height: 1;
+        margin-bottom: 80px;
+
+        @include mxw($md) {
+            margin-bottom: 50px;
+        }
+
+        @include mxw($sm) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__description {
+        font-size: 26px;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-bottom: 35px;
+
+        @include mxw($md) {
+            font-size: 22px;
+        }
+
+        @include mxw($sm) {
+            font-size: 18px;
+        }
+
+        @include mxw($xs) {
+            font-size: 16px;
+        }
+    }
+
+
+}
+
+.sets-swiper {
+    width: 100%;
+    overflow: visible;
+}
+
+.sets-card {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        @include mxw($lg) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 330px;
+        margin-right: 10px;
+        padding: 40px 25px;
+        background-color: $white;
+        border-radius: 15px;
+        box-shadow: 0px 11px 70px 0px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        transition: box-shadow .3s linear;
+
+        &.active {
+            box-shadow: 0 0 10px 0 $accent;
+
+            .sets-card__btn {
+                color: $accent;
+                border-bottom: 1px solid $accent;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include mxw($lg) {
+            margin-right: 0;
+        }
+
+        @include mxw($md) {
+            max-width: 270px;
+            padding: 20px 15px;
+        }
+
+        @include mxw($xs) {
+            max-width: 240px;
+            padding: 20px 5px;
+        }
+    }
+
+    &__name {
+        margin-bottom: 40px;
+        line-height: 1;
+        max-width: 270px;
+        font-size: 24px;
+        font-weight: 700;
+
+        @include mxw($md) {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        @include mxw($xs) {
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 40px;
+
+        @include mxw($md) {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.3;
+            font-weight: 700;
+
+            @include mxw($xs) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__box {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 35px;
+
+        @include mxw($md) {
+            margin-bottom: 20px;
+        }
+
+        &--closest {
+            justify-content: space-around;
+        }
+    }
+
+    &__price {
+        @include mxw($xs) {
+            font-size: 12px;
+        }
+    }
+
+    &__span,
+    &__btn {
+        padding: 5px 13px;
+        font-weight: 700;
+        line-height: 1.3;
+        border-bottom: 1px solid #000;
+        color: #313131;
+
+        @include mxw($xs) {
+            padding: 2px 5px;
+        }
+
+        &--single {
+            margin-bottom: 35px;
+
+            @include mxw($md) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &--order {
+            border-bottom: 1px solid $accent;
+        }
+
+        @include mxw($md) {
+            font-size: 12px;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+    }
+}
+
+.sets-open {
+    margin-bottom: 80px;
+    position: relative;
+    min-height: 900px;
+
+    @include mxw($md) {
+        min-height: 1710px;
+        margin-bottom: 0;
+    }
+
+    @include mxw($xs) {
+        min-height: 1500px;
+        margin-bottom: 0;
+    }
+
+    &__item {
+        position: absolute;
+        opacity: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: scale(0);
+        transition: transform .4s linear;
+
+        &.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @include mxw($md) {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+
+}
+
+.left {
+    max-width: 780px;
+    margin-right: 50px;
+    width: 100%;
+    color: #313131;
+
+    @include mxw($md) {
+        margin-right: 0;
+        max-width: 100%;
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: 26px;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-bottom: 25px;
+        max-width: 650px;
+
+        @include mxw($xs) {
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 20px;
+        @include mxw($md) {
+            order: 2;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.2;
+
+            @include mxw($xs) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .left-list {
+        @include mxw($md) {
+            display: flex;
+            justify-content: space-around;
+            order: 3;
+        }
+    }
+
+    &__model {
+        font-size: 33px;
+        margin-bottom: 28px;
+
+        @include mxw($md) {
+            order: 3;
+            text-align: center;
+        }
+
+        @include mxw($xs) {
+            font-size: 14px;
+        }
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+
+        @include mxw($md) {
+            order: 4;
+            margin-bottom: 0;
+            justify-content: space-around;
+        }
+        @include mxw($sm) {
+            justify-content: space-between;
+        }
+    }
+
+    &__price {
+        font-size: 24px;
+        font-weight: 700;
+
+    }
+
+    &__button {
+        color: #313131;
+
+        @include mxw($xs) {
+            font-size: 12px;
+            padding: 6px 20px 6px 20px;
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        @include mxw($md) {
+            order: 1;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.left-list {
+    display: flex;
+    margin-bottom: 50px;
+
+    &__item {
+        margin-right: 25px;
+
+        @include mxw($xs) {
+            margin-right: 6px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: 700;
+            padding-bottom: 8px;
+            border-bottom: 1px solid $text-color;
+
+            @include mxw($lg) {
+                font-size: 14px;
+            }
+
+            @include mxw($xs) {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.right {
+    max-width: 540px;
+    width: 100%;
+    border-left: 1px solid $text-color;
+    color: #313131;
+
+    @include mxw($md) {
+        position: relative;
+        left: 15px;
+
+    }
+
+
+    &__title {
+        padding-left: 40px;
+        font-size: 28px;
+        line-height: 1;
+        position: relative;
+
+        &--characteristics {
+            margin-bottom: 41px;
+        }
+
+        &--electro {
+            margin-bottom: 60px;
+
+            @include mxw($xs) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            left: -24px;
+            top: -8px;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #EDEDED;
+        }
+
+        &--characteristics::after {
+            background-image: url('../images/sets/characteristics.svg');
+        }
+
+        &--price::after,
+        &--electro::after {
+            background-size: 50%;
+            background-image: url('../images/sets/dollar.svg');
+        }
+
+        @include mxw($lg) {
+            font-size: 26px;
+        }
+
+        @include mxw($xs) {
+            &--price::after {
+                top: -6px;
+            }
+
+            &--electro::after {
+                top: 2px;
+            }
+        }
+
+
+
+    }
+
+    &__subtitle {
+        display: block;
+        padding-left: 40px;
+        margin-bottom: 36px;
+    }
+
+    &__text {
+        display: block;
+        padding-left: 20px;
+        margin-bottom: 33px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            left: -12px;
+            background-color: #EDEDED;
+        }
+
+        &--green {
+            &::after {
+                left: -15px;
+                width: 30px;
+                height: 30px;
+                border: 1px solid $accent;
+            }
+        }
+    }
+}

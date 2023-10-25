@@ -1,0 +1,365 @@
+body,
+html {
+    background-color: #EDEDED;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Jura';
+    font-weight: 600;
+    font-style: normal;
+    color: $text-color;
+    position: relative;
+    overflow-x: hidden;
+
+    @include mxw($xs) {
+        font-size: 12px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.lock {
+        overflow: hidden;
+        position: relative;
+        padding-right: 17px;
+
+        @include mxw($md) {
+            padding-right: 0;
+        }
+        &::after {
+            opacity: 1;
+            z-index: 999;
+        }
+    }
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include mxw($xs) {
+        padding: 0 10px;
+    }
+}
+
+.menu {
+    display: flex;
+
+    &__item {
+        margin-right: 32px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            font-size: 20px;
+            color: $text-white;
+        }
+    }
+}
+
+.title {
+    color: #313131;
+    text-shadow: 0px 7px 15px rgba(0, 0, 0, 0.37);
+    font-size: 150px;
+    font-weight: 600;
+
+    @include mxw($md) {
+        font-size: 80px;
+    }
+
+    @include mxw($xs) {
+        font-size: 40px;
+    }
+}
+
+.accent-button {
+    cursor: pointer;
+    color: $text-white;
+    z-index: 1;
+    padding: 15px 57px;
+    border-radius: 60px;
+    border: 1px solid #08A605;
+    box-shadow: 0px 0px 50px 5px #3B9D1F;
+
+    @include mxw($xs) {
+        font-size: 16px;
+        padding: 11px 34px 12px 34px;
+    }
+}
+
+.accent-arrow-btn {
+    font-size: 20px;
+    position: relative;
+    padding-right: 25px;
+    cursor: pointer;
+
+    @include mxw($md) {
+        font-size: 16px;
+    }
+
+    @include mxw($xs) {
+        font-size: 12px;
+        padding-right: 15px;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 70%;
+        height: 5px;
+        right: 0;
+        bottom: 10px;
+        background-image: url('../images/designer-button-img.svg');
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+
+        @include mxw($sm) {
+            bottom: 0;
+        }
+
+        @include mxw($xs) {
+            font-size: 12px;
+        }
+
+    }
+
+}
+
+.accent-plus-btn {
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include mxw($xs) {
+        width: 20px;
+        height: 20px;
+    }
+
+    &::after,
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 4px;
+        left: 0;
+        border-radius: 10px;
+        background-color: #08A605;
+        box-shadow: 0px 0px 2.51px #08A605,
+            0px 0px 5.03px #08A605,
+            0px 0px 17.63px #08A605,
+            0px 0px 35.27px #08A605,
+            0px 0px 60.47px #08A605,
+            0px 0px 105.83px #08A605;
+        transition: transform .3s linear;
+
+        @include mxw($xs) {
+            height: 2px;
+        }
+    }
+
+    &::before {
+        transform: rotate(90deg);
+    }
+
+    &.active {
+        &::before {
+            transform: rotate(0);
+        }
+    }
+
+}
+
+.sets-swiper,
+.reviews {
+
+    &__arrows {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    &__arrow {
+        cursor: pointer;
+        display: none;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: $white;
+        border: 1px solid #000;
+        border-radius: 50%;
+        margin-right: 10px;
+        fill: #FFF;
+        transition: opacity .3s linear;
+        filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.25));
+
+        @include mxw($lg) {
+            display: block;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 14px;
+            height: 14px;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            background-image: url('../images/sets/arrow-swiper.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &--prev::after {
+            left: 45%;
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+    }
+
+}
+
+.contact-links {
+    max-width: 300px;
+    width: 100%;
+
+    @include mxw($sm) {
+        margin-bottom: 88px;
+        position: relative;
+        max-width: 100%;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 50%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background:
+                url('../images/contacts/bg-rectangle.png') center/contain no-repeat,
+                linear-gradient(to right, transparent 50%, #353535 50%);
+        }
+
+    }
+
+    @include mxw($xs) {
+        &::after {
+            width: 128px;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 25px;
+
+        @include mxw($xs) {
+            display: none;
+        }
+    }
+
+    &__item {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        // width: 100%;
+        color: #000;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: normal;
+        position: relative;
+        padding-right: 72px;
+        text-align: right;
+
+        @include mxw($sm) {
+            display: inline;
+            text-align: left;
+        }
+
+        @include mxw($xs) {
+            font-size: 16px;
+            display: block;
+            max-width: 210px;
+            width: 100%;
+            padding-right: 30px;
+            text-align: right;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            right: 20px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @include mxw($xs) {
+                right: 0;
+            }
+        }
+
+        &--mail::after {
+            background-image: url('../images/contacts/mail.svg');
+        }
+
+        &--number::after {
+            background-image: url('../images/contacts/viber.svg');
+            background-size: 125%;
+        }
+
+        &--telegram::after {
+            background-image: url('../images/contacts/telegram.svg');
+        }
+
+    }
+}
+
+.swiper-button-disabled {
+    opacity: 0.5;
+}

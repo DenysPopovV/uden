@@ -1,0 +1,72 @@
+.popup-thank {
+    position: fixed;
+    left: 0;
+    right: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-200%);
+    z-index: 1000;
+    transition: transform .3s linear;
+
+    &.active {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        right: 45px;
+        top: 15px;
+        &::after,
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__box {
+        position: relative;
+        background-color: #fff;
+        padding: 120px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include mxw($sm) {
+            padding: 50px;
+        }
+    }
+
+    &__title {
+        line-height: 1;
+        margin-bottom: 35px;
+    }
+
+    &__text {
+        p {
+            font-size: 20px;
+
+            @include mxw($sm) {
+                font-size: 14px;
+            }
+
+            @include mxw($xs) {
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+    }
+
+
+}
